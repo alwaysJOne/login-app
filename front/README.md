@@ -1,67 +1,26 @@
-# OAuth React Frontend
-
-Vue.js로 작성된 OAuth 로그인 프로젝트를 React로 마이그레이션한 프로젝트입니다.
-
-## 기능
-
-- 일반 회원가입/로그인
-- Google OAuth 로그인
-- Kakao OAuth 로그인
-- JWT 토큰 기반 인증
-
-## 설치 및 실행
-
-### 의존성 설치
-```bash
-npm install
-```
-
-### 개발 서버 실행
-```bash
-npm run dev
-```
-
-개발 서버는 http://localhost:3000 에서 실행됩니다.
+# 프론트엔드 (React)
 
 ## 프로젝트 구조
+- React 기반 SPA
+- JWT 토큰을 활용한 인증 처리
 
-```
-src/
-├── components/
-│   ├── HeaderComponent.jsx    # 헤더 컴포넌트 (로그인/로그아웃 버튼)
-│   ├── MemberCreate.jsx       # 회원가입 페이지
-│   ├── MemberLogin.jsx        # 로그인 페이지
-│   ├── GoogleRedirect.jsx     # Google OAuth 리다이렉트 처리
-│   └── KakaoRedirect.jsx      # Kakao OAuth 리다이렉트 처리
-├── assets/
-│   ├── google_login.png       # Google 로그인 버튼 이미지
-│   └── kakao_login.png        # Kakao 로그인 버튼 이미지
-├── App.jsx                    # 메인 앱 컴포넌트
-└── main.jsx                   # 앱 진입점
-```
-
-## 사용된 기술
-
-- React 18
-- React Router DOM
-- Material-UI
-- Styled Components
+## 주요 라이브러리
+- React
 - Axios
-- js-cookie
+- Styled-components
 
-## API 엔드포인트
+## 실행 방법
 
-백엔드 서버는 http://localhost:8080 에서 실행되어야 합니다.
+```bash
+cd front
+npm install
+npm start
+```
 
-- `POST /member/create` - 회원가입
-- `POST /member/doLogin` - 일반 로그인
-- `POST /member/google/doLogin` - Google OAuth 로그인
-- `POST /member/kakao/doLogin` - Kakao OAuth 로그인
+## 주요 페이지
+- 로그인/회원가입 페이지
+- 마이페이지(프로필)
+- 인증이 필요한 페이지 접근 시 토큰 검증
 
-## 라우팅
-
-- `/` - 홈페이지
-- `/member/create` - 회원가입
-- `/member/login` - 로그인
-- `/oauth/google/redirect` - Google OAuth 리다이렉트
-- `/oauth/kakao/redirect` - Kakao OAuth 리다이렉트
+## 환경 변수
+- `.env` 파일에서 API 서버 주소 설정
